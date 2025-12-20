@@ -1,0 +1,8 @@
+relationship AutoDetected_10b6a05b-33b9-41cf-83fc-640b0425431b
+	fromColumn: dim_properties.location_id
+	toColumn: dim_locations.location_id
+
+relationship AutoDetected_14ccc59a-c552-48a8-9438-0af3801fd8fe
+	fromColumn: fac_listings.property_id
+	toColumn: dim_properties.property_id
+

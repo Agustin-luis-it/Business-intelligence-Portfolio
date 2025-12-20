@@ -1,0 +1,76 @@
+table fac_listings
+	lineageTag: 8fc82974-adc4-46ef-90dd-4c5b33730c35
+
+	column listing_id
+		dataType: int64
+		formatString: 0
+		lineageTag: ea2ed3dc-471c-412b-ad0a-ceb91347127f
+		summarizeBy: none
+		sourceColumn: listing_id
+
+		annotation SummarizationSetBy = User
+
+	column property_id
+		dataType: int64
+		formatString: 0
+		lineageTag: de4e3bb0-e45e-446f-bbd5-475049cb5d5f
+		summarizeBy: none
+		sourceColumn: property_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column operation_type
+		dataType: string
+		lineageTag: 5b56d345-5acb-472a-bc01-7ff70ff9b4f7
+		summarizeBy: none
+		sourceColumn: operation_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column publication_date
+		dataType: int64
+		formatString: 0
+		lineageTag: 28fe879a-d468-4534-9b59-b4044bfac294
+		summarizeBy: none
+		sourceColumn: publication_date
+
+		annotation SummarizationSetBy = User
+
+	column price
+		dataType: int64
+		formatString: 0
+		lineageTag: 08e1475d-7606-4231-b027-7f6b489baacd
+		summarizeBy: none
+		sourceColumn: price
+
+		annotation SummarizationSetBy = User
+
+	column currency
+		dataType: string
+		lineageTag: d31d01bb-7dc1-4b74-a29d-3ad8b34ddf93
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column listing_status
+		dataType: string
+		lineageTag: 24dc4bff-cfea-415b-91fa-7c4c00efb083
+		summarizeBy: none
+		sourceColumn: listing_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fac_listings = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\luisa\Downloads\inmobiliario_model_star_real_addresses.xlsx"), null, true),
+				    fac_listings_Sheet = Source{[Item="fac_listings",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(fac_listings_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"listing_id", Int64.Type}, {"property_id", Int64.Type}, {"operation_type", type text}, {"publication_date", Int64.Type}, {"price", Int64.Type}, {"currency", type text}, {"listing_status", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

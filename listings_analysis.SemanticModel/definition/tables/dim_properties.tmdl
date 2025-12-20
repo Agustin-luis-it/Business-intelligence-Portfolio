@@ -1,0 +1,77 @@
+table dim_properties
+	lineageTag: 41f47891-f006-46c6-b40a-94ac0c563349
+
+	column property_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b2097f3-40d5-4402-a26f-f33d978a031e
+		summarizeBy: none
+		sourceColumn: property_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column direccion
+		dataType: string
+		lineageTag: 3f0a4ff7-ee87-4b9c-9de6-fb9d704922a8
+		summarizeBy: none
+		sourceColumn: direccion
+
+		annotation SummarizationSetBy = Automatic
+
+	column property_type
+		dataType: string
+		lineageTag: e13a0a49-ac42-41f7-9bca-e547119d4ce0
+		summarizeBy: none
+		sourceColumn: property_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column m2_total
+		dataType: int64
+		formatString: 0
+		lineageTag: 0fd0e87e-083e-47c2-bff8-0539e12ea3ff
+		summarizeBy: none
+		sourceColumn: m2_total
+
+		annotation SummarizationSetBy = User
+
+	column m2_covered
+		dataType: int64
+		formatString: 0
+		lineageTag: e2a288a3-c2c4-4479-9de6-805597237313
+		summarizeBy: none
+		sourceColumn: m2_covered
+
+		annotation SummarizationSetBy = User
+
+	column rooms
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c924e5c-1187-4ea7-9d02-5a9e0b1be3d4
+		summarizeBy: none
+		sourceColumn: rooms
+
+		annotation SummarizationSetBy = User
+
+	column location_id
+		dataType: int64
+		formatString: 0
+		lineageTag: ddeb7105-5df9-4444-a9b3-eca4acebf6c4
+		summarizeBy: none
+		sourceColumn: location_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_properties = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\luisa\Downloads\inmobiliario_model_star_real_addresses.xlsx"), null, true),
+				    dim_properties_Sheet = Source{[Item="dim_properties",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(dim_properties_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"property_id", Int64.Type}, {"direccion", type text}, {"property_type", type text}, {"m2_total", Int64.Type}, {"m2_covered", Int64.Type}, {"rooms", Int64.Type}, {"location_id", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

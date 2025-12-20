@@ -1,0 +1,61 @@
+table dim_locations
+	lineageTag: e4eff01c-6592-4ae7-af9e-1ef5e8331929
+
+	column location_id
+		dataType: int64
+		formatString: 0
+		lineageTag: ee95f749-4e69-4c47-8d37-a3d366bb269c
+		summarizeBy: none
+		sourceColumn: location_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column barrio
+		dataType: string
+		lineageTag: e8690a66-7517-40f6-a6db-6a98e98539d3
+		summarizeBy: none
+		sourceColumn: barrio
+
+		annotation SummarizationSetBy = Automatic
+
+	column ciudad
+		dataType: string
+		lineageTag: 58becccc-8927-4b25-946d-ad4cadc4f35e
+		summarizeBy: none
+		sourceColumn: ciudad
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitud
+		dataType: double
+		lineageTag: a0946b4b-006a-40da-a3c2-afeed06bfce3
+		summarizeBy: none
+		sourceColumn: latitud
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitud
+		dataType: double
+		lineageTag: 4ad1ea82-3dd6-4600-b0ec-9552505a25f4
+		summarizeBy: none
+		sourceColumn: longitud
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition dim_locations = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\luisa\Downloads\inmobiliario_model_star_real_addresses.xlsx"), null, true),
+				    dim_locations_Sheet = Source{[Item="dim_locations",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(dim_locations_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"location_id", Int64.Type}, {"barrio", type text}, {"ciudad", type text}, {"latitud", type number}, {"longitud", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

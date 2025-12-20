@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "listings_analysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0e654efd-bbdb-449e-8107-1e88dfa160ea"
+  }
+}
