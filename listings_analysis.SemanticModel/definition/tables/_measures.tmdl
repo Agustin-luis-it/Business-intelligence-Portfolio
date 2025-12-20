@@ -1,0 +1,32 @@
+table _measures
+	lineageTag: 2821e051-91d3-41ac-8e1b-8b3ca1600053
+
+	measure _listings = DISTINCTCOUNT(fac_listings[listing_id])
+		formatString: 0
+		lineageTag: d184835a-bd11-4aba-8517-c8558336ac3a
+
+	column medidas
+		dataType: string
+		lineageTag: 5055c3b3-546b-4d2a-95b1-69c61ada5ae8
+		summarizeBy: none
+		sourceColumn: medidas
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _measures = m
+		mode: import
+		source =
+				let
+				    Source = #table(
+				        {"medidas"},
+				        {
+				            {"1"}
+				        }
+				    )
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

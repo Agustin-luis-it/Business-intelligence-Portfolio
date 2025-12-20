@@ -4,13 +4,13 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
+        "x": 199.09274471756521,
         "y": 0
       },
       "nodes": [
         {
           "location": {
-            "x": 896.480852159864,
+            "x": 766.91255797859139,
             "y": 0
           },
           "nodeIndex": "dim_locations",
@@ -46,6 +46,32 @@
             "width": 234
           },
           "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 15.146086828271677,
+            "y": 15.345779771863533
+          },
+          "nodeIndex": "dim_dates",
+          "nodeLineageTag": "ee229faf-8848-46e0-b3e0-947b742333b5",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1035.7664711503198,
+            "y": 300.36095205467927
+          },
+          "nodeIndex": "_measures",
+          "nodeLineageTag": "2821e051-91d3-41ac-8e1b-8b3ca1600053",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",

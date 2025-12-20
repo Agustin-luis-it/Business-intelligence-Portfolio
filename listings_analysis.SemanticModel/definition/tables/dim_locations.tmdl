@@ -29,6 +29,7 @@ table dim_locations
 	column latitud
 		dataType: double
 		lineageTag: a0946b4b-006a-40da-a3c2-afeed06bfce3
+		dataCategory: Latitude
 		summarizeBy: none
 		sourceColumn: latitud
 
@@ -39,6 +40,7 @@ table dim_locations
 	column longitud
 		dataType: double
 		lineageTag: 4ad1ea82-3dd6-4600-b0ec-9552505a25f4
+		dataCategory: Longitude
 		summarizeBy: none
 		sourceColumn: longitud
 

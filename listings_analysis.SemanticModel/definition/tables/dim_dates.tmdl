@@ -1,0 +1,18 @@
+table dim_dates
+	lineageTag: ee229faf-8848-46e0-b3e0-947b742333b5
+
+	column Date
+		formatString: General Date
+		lineageTag: 0aa41e49-9ca0-45bd-88f1-568ba2f3a15b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_dates = calculated
+		mode: import
+		source = CALENDAR(MIN(fac_listings[publication_date]), MAX(fac_listings[publication_date]))
+
+	annotation PBI_Id = d8dd0e6ab0e540e0a98e8797b362b648
+
