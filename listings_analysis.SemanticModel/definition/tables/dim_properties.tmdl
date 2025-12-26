@@ -66,7 +66,7 @@ table dim_properties
 		mode: import
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("C:\Users\luisa\Downloads\inmobiliario_model_star_real_addresses.xlsx"), null, true),
+				    Source = Excel.Workbook(File.Contents("C:\Users\luisa\OneDrive\Escritorio\real_state_analysis\real_state_source.xlsx"), null, true),
 				    dim_properties_Sheet = Source{[Item="dim_properties",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(dim_properties_Sheet, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"property_id", Int64.Type}, {"direccion", type text}, {"property_type", type text}, {"m2_total", Int64.Type}, {"m2_covered", Int64.Type}, {"rooms", Int64.Type}, {"location_id", Int64.Type}})

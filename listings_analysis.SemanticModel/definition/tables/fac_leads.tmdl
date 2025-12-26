@@ -1,0 +1,78 @@
+table fac_leads
+	lineageTag: 919a3036-f149-422d-8ede-938c9e232f54
+
+	column lead_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c52aa37-8eb4-4cf2-9760-10227fcc5bcd
+		summarizeBy: sum
+		sourceColumn: lead_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column lead_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a2290e03-ebe1-4cef-aee7-097b351fa2ac
+		summarizeBy: none
+		sourceColumn: lead_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column listing_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 00e26dd5-f59a-420a-95d7-0f98c5afa302
+		summarizeBy: none
+		sourceColumn: listing_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column source
+		dataType: string
+		lineageTag: 9d90360b-1294-44a1-a259-c1cb59d7c4cf
+		summarizeBy: none
+		sourceColumn: source
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_type
+		dataType: string
+		lineageTag: 26f3f01e-d61e-4181-96ac-30bd47989541
+		summarizeBy: none
+		sourceColumn: source_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column assigned_to
+		dataType: string
+		lineageTag: 466687f5-f4fe-4fb4-b74c-4673c113b064
+		summarizeBy: none
+		sourceColumn: assigned_to
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 460838e3-1a92-4bd3-83e6-e1ac7033685a
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fac_leads = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\luisa\OneDrive\Escritorio\real_state_analysis\real_state_source.xlsx"), null, true),
+				    fac_leads_Sheet = Source{[Item="fac_leads",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(fac_leads_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"lead_id", Int64.Type}, {"lead_date", type datetime}, {"listing_id", Int64.Type}, {"source", type text}, {"source_type", type text}, {"assigned_to", type text}, {"customer_id", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
