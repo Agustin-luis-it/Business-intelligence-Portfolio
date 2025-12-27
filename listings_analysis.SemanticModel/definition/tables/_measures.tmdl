@@ -1,7 +1,7 @@
 table _measures
 	lineageTag: 2821e051-91d3-41ac-8e1b-8b3ca1600053
 
-	measure _listings = ```
+	measure Listings = ```
 			
 			CALCULATE(
 			    DISTINCTCOUNT(dim_listings[listing_id]),
@@ -12,15 +12,32 @@ table _measures
 		formatString: 0
 		lineageTag: d184835a-bd11-4aba-8517-c8558336ac3a
 
-	measure _precio_venta_promedio =
+	measure 'Precio de venta promedio' =
 			
 			CALCULATE(
 			    AVERAGE(dim_listings[price]),
-			    dim_listings[operation_type] = "Venta"
+			    dim_listings[Tipo de operación] = "Venta"
 			)
 		lineageTag: 32ae598e-7ea0-4fab-8fa3-7d1170038b96
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Leads = COUNTROWS(fac_leads)
+		formatString: 0
+		lineageTag: 6c529afd-5f8f-42e0-813d-5e212a179de7
+
+	measure 'Ratio Leads/Listings' = [Leads] / [Listings]
+		formatString: 0.00
+		lineageTag: 444ce03c-8aa2-480e-a6de-9cc3429c7bea
+
+	measure 'Operaciones concretadas' =
+			
+			CALCULATE(
+			    COUNTROWS(dim_listings),
+			    dim_listings[listing_status] = "Vendido"
+			)
+		formatString: 0
+		lineageTag: e7bf869f-67ee-42f3-97d4-3d45e5e031d6
 
 	column medidas
 		dataType: string

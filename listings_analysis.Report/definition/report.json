@@ -50,6 +50,37 @@
           "type": "BaseTheme"
         }
       ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "house-circle-check_(1)20157831376102198.png",
+          "path": "house-circle-check_(1)20157831376102198.png",
+          "type": "Image"
+        },
+        {
+          "name": "stats_(1)8428741252785182.png",
+          "path": "stats_(1)8428741252785182.png",
+          "type": "Image"
+        },
+        {
+          "name": "users-alt06922789493164905.png",
+          "path": "users-alt06922789493164905.png",
+          "type": "Image"
+        },
+        {
+          "name": "house-chimney_(1)24657585739396493.png",
+          "path": "house-chimney_(1)24657585739396493.png",
+          "type": "Image"
+        },
+        {
+          "name": "filter_(1)8083368252309684.png",
+          "path": "filter_(1)8083368252309684.png",
+          "type": "Image"
+        }
+      ]
     }
   ],
   "settings": {

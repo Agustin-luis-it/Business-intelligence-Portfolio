@@ -10,11 +10,11 @@ table dim_locations
 
 		annotation SummarizationSetBy = Automatic
 
-	column barrio
+	column Barrio
 		dataType: string
 		lineageTag: e8690a66-7517-40f6-a6db-6a98e98539d3
 		summarizeBy: none
-		sourceColumn: barrio
+		sourceColumn: Barrio
 
 		annotation SummarizationSetBy = Automatic
 
@@ -55,9 +55,10 @@ table dim_locations
 				    Source = Excel.Workbook(File.Contents("C:\Users\luisa\OneDrive\Escritorio\real_state_analysis\real_state_source.xlsx"), null, true),
 				    dim_locations_Sheet = Source{[Item="dim_locations",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(dim_locations_Sheet, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"location_id", Int64.Type}, {"barrio", type text}, {"ciudad", type text}, {"latitud", type number}, {"longitud", type number}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"location_id", Int64.Type}, {"barrio", type text}, {"ciudad", type text}, {"latitud", type number}, {"longitud", type number}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"barrio", "Barrio"}})
 				in
-				    #"Changed Type"
+				    #"Renamed Columns"
 
 	annotation PBI_ResultType = Table
 

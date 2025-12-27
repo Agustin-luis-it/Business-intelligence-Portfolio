@@ -18,11 +18,11 @@ table dim_properties
 
 		annotation SummarizationSetBy = Automatic
 
-	column property_type
+	column 'Tipo de propiedad'
 		dataType: string
 		lineageTag: e13a0a49-ac42-41f7-9bca-e547119d4ce0
 		summarizeBy: none
-		sourceColumn: property_type
+		sourceColumn: Tipo de propiedad
 
 		annotation SummarizationSetBy = Automatic
 
@@ -69,9 +69,10 @@ table dim_properties
 				    Source = Excel.Workbook(File.Contents("C:\Users\luisa\OneDrive\Escritorio\real_state_analysis\real_state_source.xlsx"), null, true),
 				    dim_properties_Sheet = Source{[Item="dim_properties",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(dim_properties_Sheet, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"property_id", Int64.Type}, {"direccion", type text}, {"property_type", type text}, {"m2_total", Int64.Type}, {"m2_covered", Int64.Type}, {"rooms", Int64.Type}, {"location_id", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"property_id", Int64.Type}, {"direccion", type text}, {"property_type", type text}, {"m2_total", Int64.Type}, {"m2_covered", Int64.Type}, {"rooms", Int64.Type}, {"location_id", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"property_type", "Tipo de propiedad"}})
 				in
-				    #"Changed Type"
+				    #"Renamed Columns"
 
 	annotation PBI_ResultType = Table
 

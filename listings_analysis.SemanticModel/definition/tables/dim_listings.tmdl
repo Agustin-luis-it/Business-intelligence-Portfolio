@@ -19,11 +19,11 @@ table dim_listings
 
 		annotation SummarizationSetBy = Automatic
 
-	column operation_type
+	column 'Tipo de operación'
 		dataType: string
 		lineageTag: 5b56d345-5acb-472a-bc01-7ff70ff9b4f7
 		summarizeBy: none
-		sourceColumn: operation_type
+		sourceColumn: Tipo de operación
 
 		annotation SummarizationSetBy = Automatic
 
@@ -70,9 +70,10 @@ table dim_listings
 				    Source = Excel.Workbook(File.Contents("C:\Users\luisa\OneDrive\Escritorio\real_state_analysis\real_state_source.xlsx"), null, true),
 				    fac_listings_Sheet = Source{[Item="dim_listings",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(fac_listings_Sheet, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"listing_id", Int64.Type}, {"property_id", Int64.Type}, {"operation_type", type text}, {"publication_date", type date}, {"price", Int64.Type}, {"currency", type text}, {"listing_status", type text}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"listing_id", Int64.Type}, {"property_id", Int64.Type}, {"operation_type", type text}, {"publication_date", type date}, {"price", Int64.Type}, {"currency", type text}, {"listing_status", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"operation_type", "Tipo de operación"}})
 				in
-				    #"Changed Type"
+				    #"Renamed Columns"
 
 	annotation PBI_ResultType = Table
 
