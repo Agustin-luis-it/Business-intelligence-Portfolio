@@ -1,18 +1,67 @@
 table dim_dates
 	lineageTag: ee229faf-8848-46e0-b3e0-947b742333b5
+	dataCategory: Time
 
-	column Date
+	column Fecha
+		isKey
 		formatString: General Date
 		lineageTag: 0aa41e49-9ca0-45bd-88f1-568ba2f3a15b
 		summarizeBy: none
-		isNameInferred
 		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		formatString: 0
+		lineageTag: d9a7c701-7fc3-45a1-a288-052fd94f984d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Año]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		formatString: 0
+		lineageTag: 0ad02408-f5c7-4319-9950-83d4e2cadeec
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mes]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Periodo
+		lineageTag: 4707f797-0bd6-4064-a992-c730ebe4854c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Periodo]
 
 		annotation SummarizationSetBy = Automatic
 
 	partition dim_dates = calculated
 		mode: import
-		source = CALENDAR(MIN(dim_listings[publication_date]), MAX(dim_listings[publication_date]))
+		source = ```
+				
+				VAR _min_date =
+				    MIN (
+				        CALCULATE ( MIN ( fac_leads[lead_date] ), ALL ( fac_leads ) ),
+				        CALCULATE ( MIN ( dim_listings[publication_date] ), ALL ( dim_listings ) )
+				    )
+				
+				VAR _max_date =
+				    MAX (
+				        CALCULATE ( MAX ( fac_leads[lead_date] ), ALL ( fac_leads ) ),
+				        CALCULATE ( MAX ( dim_listings[publication_date] ), ALL ( dim_listings ) )
+				    )
+				
+				RETURN
+				ADDCOLUMNS (
+				    CALENDAR ( _min_date, _max_date ),
+				    "Año", YEAR ( [Date] ),
+				    "Mes", MONTH ( [Date] ),
+				    "Periodo", FORMAT ( [Date], "YYYYMM" )
+				)
+				
+				```
 
 	annotation PBI_Id = d8dd0e6ab0e540e0a98e8797b362b648
 

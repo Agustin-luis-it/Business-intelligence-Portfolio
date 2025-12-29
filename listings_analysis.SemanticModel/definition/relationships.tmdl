@@ -6,10 +6,6 @@ relationship AutoDetected_14ccc59a-c552-48a8-9438-0af3801fd8fe
 	fromColumn: dim_listings.property_id
 	toColumn: dim_properties.property_id
 
-relationship f3d8e043-a7fb-7989-1c3c-0376fe28baaf
-	fromColumn: dim_listings.publication_date
-	toColumn: dim_dates.Date
-
 relationship AutoDetected_a42f7321-516c-4e4e-b342-cd3758d15393
 	fromColumn: fac_leads.listing_id
 	toColumn: dim_listings.listing_id
@@ -18,8 +14,12 @@ relationship AutoDetected_6cbf9671-30ef-48d7-880c-637d4f3cdeb7
 	fromColumn: fac_leads.customer_id
 	toColumn: dim_customers.customer_id
 
+relationship f3d8e043-a7fb-7989-1c3c-0376fe28baaf
+	fromColumn: dim_listings.publication_date
+	toColumn: dim_dates.Fecha
+
 relationship 3412a8a9-f058-0d1d-2ca6-6ea5aef44a9c
 	isActive: false
 	fromColumn: fac_leads.lead_date
-	toColumn: dim_dates.Date
+	toColumn: dim_dates.Fecha
 

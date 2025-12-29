@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "6f72440d3db4e8496d19",
+  "name": "73fd907d8372b01cea2b",
   "position": {
-    "x": 430.39151841190443,
-    "y": 45.100907618013935,
-    "z": 8,
-    "height": 79.8930363519104,
-    "width": 210.04136976389347,
-    "tabOrder": 7
+    "x": 5.1709124500395678,
+    "y": 342.71650776631475,
+    "z": 5000,
+    "height": 65.2489048187973,
+    "width": 190.91346224759209,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -48,14 +48,21 @@
           }
         }
       ],
-      "general": [
-        {
-          "properties": {}
-        }
-      ],
       "items": [
         {
           "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
             "background": {
               "solid": {
                 "color": {
@@ -65,6 +72,19 @@
                       "Percent": -0.5
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             },
@@ -84,11 +104,67 @@
         }
       ]
     },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'4.10_main_menu_slicer_2'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "syncGroup": {
       "groupName": "Tipo de operación",
       "fieldChanges": true,
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "parentGroupName": "43901d6aeb05234ae9c9"
 }

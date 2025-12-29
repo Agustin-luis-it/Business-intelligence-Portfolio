@@ -5,10 +5,10 @@ table fac_leads
 		dataType: int64
 		formatString: 0
 		lineageTag: 6c52aa37-8eb4-4cf2-9760-10227fcc5bcd
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: lead_id
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column lead_date
 		dataType: dateTime
