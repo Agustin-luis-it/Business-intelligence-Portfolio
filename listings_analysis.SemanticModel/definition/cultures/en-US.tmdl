@@ -1653,135 +1653,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_listing.listing_status": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "dim_listings",
-			          "ConceptualProperty": "listing_status"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "listing status": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "listing_status": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "status": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "listing category": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "listing importance": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "listing prestige": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "listing prominence": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "category": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "importance": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "prestige": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "prominence": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "listing condition": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "listing class": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        }
-			      ]
-			    },
 			    "dim_date": {
 			      "Definition": {
 			        "Binding": {
@@ -2291,10 +2162,20 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.485
 			          }
+			        },
+			        {
+			          "Ratio": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
-			    "entity__measure.operaciones_concretadas": {
+			    "entity__measure.concretadas": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_measures",
@@ -2304,18 +2185,8 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "operaciones concretadas": {
+			          "concretadas": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Concretadas": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -3265,9 +3136,6 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
 			          "listing id": {
@@ -3807,6 +3675,9 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "selected dates": {
@@ -3891,9 +3762,317 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "dim_listing.deactivation_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_listings",
+			          "ConceptualProperty": "deactivation_date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "deactivation date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "deactivation_date": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "deactivation moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "deactivation period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "dim_listing.deactivation_reason": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_listings",
+			          "ConceptualProperty": "deactivation_reason"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "deactivation reason": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "deactivation_reason": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "reason": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "deactivation motivation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "deactivation intention": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "motivation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "intention": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "deactivation aim": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "deactivation motive": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "deactivation cause": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "deactivation goal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "deactivation purpose": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "deactivation object": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.año": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_dates",
+			          "ConceptualProperty": "Año"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "año": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.me": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_dates",
+			          "ConceptualProperty": "Mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "me": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.periodo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_dates",
+			          "ConceptualProperty": "Periodo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "periodo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.día_semana": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_dates",
+			          "ConceptualProperty": "Día Semana"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "día semana": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.día_semana_nro": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_dates",
+			          "ConceptualProperty": "Día Semana Nro"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "día semana nro": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.mes_nro": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_dates",
+			          "ConceptualProperty": "Mes Nro"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mes nro": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "me nro": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "fac_lead_has_source_type": {
+			      "Binding": {
+			        "ConceptualEntity": "fac_leads"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fac_lead": {
+			          "Target": {
+			            "Entity": "fac_lead"
+			          }
+			        },
+			        "fac_lead.source_type": {
+			          "Target": {
+			            "Entity": "fac_lead.source_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fac_lead"
+			            },
+			            "Object": {
+			              "Role": "fac_lead.source_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fac_leads_have_source_types"
+			        }
+			      ]
+			    },
 			    "fac_lead_has_source": {
 			      "Binding": {
 			        "ConceptualEntity": "fac_leads"
@@ -3924,6 +4103,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fac_leads_have_sources"
+			        }
+			      ]
+			    },
+			    "fac_lead_has_listing_id": {
+			      "Binding": {
+			        "ConceptualEntity": "fac_leads"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fac_lead": {
+			          "Target": {
+			            "Entity": "fac_lead"
+			          }
+			        },
+			        "fac_lead.listing_id": {
+			          "Target": {
+			            "Entity": "fac_lead.listing_id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fac_lead"
+			            },
+			            "Object": {
+			              "Role": "fac_lead.listing_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fac_leads_have_listing_ids"
 			        }
 			      ]
 			    },
@@ -4297,7 +4509,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_listing_has_entity__measure_operaciones_concretadas": {
+			    "dim_listing_has_entity__measure_concretadas": {
 			      "Binding": {
 			        "ConceptualEntity": "dim_listings"
 			      },
@@ -4308,9 +4520,9 @@ cultureInfo en-US
 			            "Entity": "dim_listing"
 			          }
 			        },
-			        "entity__measure.operaciones_concretadas": {
+			        "entity__measure.concretadas": {
 			          "Target": {
-			            "Entity": "entity__measure.operaciones_concretadas"
+			            "Entity": "entity__measure.concretadas"
 			          }
 			        }
 			      },
@@ -4321,12 +4533,12 @@ cultureInfo en-US
 			              "Role": "dim_listing"
 			            },
 			            "Object": {
-			              "Role": "entity__measure.operaciones_concretadas"
+			              "Role": "entity__measure.concretadas"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_listing_have_operaciones_concretadas"
+			          "ID": "dim_listing_have_concretadas"
 			        }
 			      ]
 			    },
@@ -4558,39 +4770,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_dates_have_fechas"
-			        }
-			      ]
-			    },
-			    "dim_listing_has_listing_status": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_listing": {
-			          "Target": {
-			            "Entity": "dim_listing"
-			          }
-			        },
-			        "dim_listing.listing_status": {
-			          "Target": {
-			            "Entity": "dim_listing.listing_status"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_listing"
-			            },
-			            "Object": {
-			              "Role": "dim_listing.listing_status"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_listing_have_listing_statuses"
 			        }
 			      ]
 			    },
@@ -5449,20 +5628,20 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fac_lead_has_source_type": {
+			    "dim_listing_has_deactivation_date": {
 			      "Binding": {
-			        "ConceptualEntity": "fac_leads"
+			        "ConceptualEntity": "dim_listings"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fac_lead": {
+			        "dim_listing": {
 			          "Target": {
-			            "Entity": "fac_lead"
+			            "Entity": "dim_listing"
 			          }
 			        },
-			        "fac_lead.source_type": {
+			        "dim_listing.deactivation_date": {
 			          "Target": {
-			            "Entity": "fac_lead.source_type"
+			            "Entity": "dim_listing.deactivation_date"
 			          }
 			        }
 			      },
@@ -5470,19 +5649,52 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fac_lead"
+			              "Role": "dim_listing"
 			            },
 			            "Object": {
-			              "Role": "fac_lead.source_type"
+			              "Role": "dim_listing.deactivation_date"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fac_leads_have_source_types"
+			          "ID": "dim_listing_have_deactivation_dates"
 			        }
 			      ]
 			    },
-			    "dim_date_has_entity__measure_selected_dates": {
+			    "dim_listing_has_deactivation_reason": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_listing": {
+			          "Target": {
+			            "Entity": "dim_listing"
+			          }
+			        },
+			        "dim_listing.deactivation_reason": {
+			          "Target": {
+			            "Entity": "dim_listing.deactivation_reason"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_listing"
+			            },
+			            "Object": {
+			              "Role": "dim_listing.deactivation_reason"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_listing_have_deactivation_reasons"
+			        }
+			      ]
+			    },
+			    "dim_date_has_año": {
 			      "Binding": {
 			        "ConceptualEntity": "dim_dates"
 			      },
@@ -5493,9 +5705,9 @@ cultureInfo en-US
 			            "Entity": "dim_date"
 			          }
 			        },
-			        "entity__measure.selected_dates": {
+			        "dim_date.año": {
 			          "Target": {
-			            "Entity": "entity__measure.selected_dates"
+			            "Entity": "dim_date.año"
 			          }
 			        }
 			      },
@@ -5506,12 +5718,177 @@ cultureInfo en-US
 			              "Role": "dim_date"
 			            },
 			            "Object": {
-			              "Role": "entity__measure.selected_dates"
+			              "Role": "dim_date.año"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_selected_dates"
+			          "ID": "dim_dates_have_años"
+			        }
+			      ]
+			    },
+			    "dim_date_has_me": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_dates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.me": {
+			          "Target": {
+			            "Entity": "dim_date.me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_me"
+			        }
+			      ]
+			    },
+			    "dim_date_has_periodo": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_dates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.periodo": {
+			          "Target": {
+			            "Entity": "dim_date.periodo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.periodo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_periodos"
+			        }
+			      ]
+			    },
+			    "dim_date_has_día_semana": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_dates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.día_semana": {
+			          "Target": {
+			            "Entity": "dim_date.día_semana"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.día_semana"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_día_semanas"
+			        }
+			      ]
+			    },
+			    "dim_date_has_día_semana_nro": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_dates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.día_semana_nro": {
+			          "Target": {
+			            "Entity": "dim_date.día_semana_nro"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.día_semana_nro"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_día_semana_nros"
+			        }
+			      ]
+			    },
+			    "dim_date_has_mes_nro": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_dates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.mes_nro": {
+			          "Target": {
+			            "Entity": "dim_date.mes_nro"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.mes_nro"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_mes_nros"
 			        }
 			      ]
 			    },
@@ -5653,52 +6030,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fac_lead_has_dim_listing": {
-			      "Binding": {
-			        "ConceptualEntity": "fac_leads"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fac_lead": {
-			          "Target": {
-			            "Entity": "fac_lead"
-			          }
-			        },
-			        "dim_listing": {
-			          "Target": {
-			            "Entity": "dim_listing"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fac_lead"
-			            },
-			            "Object": {
-			              "Role": "dim_listing"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fac_leads_have_dim_listing"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_listing"
-			            },
-			            "Object": {
-			              "Role": "fac_lead"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_listing_have_fac_leads"
-			        }
-			      ]
-			    },
 			    "fac_lead_has_dim_customer": {
 			      "Binding": {
 			        "ConceptualEntity": "fac_leads"
@@ -5742,6 +6073,52 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_customers_have_fac_leads"
+			        }
+			      ]
+			    },
+			    "fac_lead_has_dim_date": {
+			      "Binding": {
+			        "ConceptualEntity": "fac_leads"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fac_lead": {
+			          "Target": {
+			            "Entity": "fac_lead"
+			          }
+			        },
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fac_lead"
+			            },
+			            "Object": {
+			              "Role": "dim_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fac_leads_have_dim_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "fac_lead"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_fac_leads"
 			        }
 			      ]
 			    }

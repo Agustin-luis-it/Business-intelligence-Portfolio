@@ -1,0 +1,206 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "c4230d3552d5f15af1cc",
+  "position": {
+    "x": 917.52764000360719,
+    "y": 174.34502660293984,
+    "z": 19003,
+    "height": 527.46758048516551,
+    "width": 344.25755252953377,
+    "tabOrder": 7024
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_dates"
+                    }
+                  },
+                  "Property": "Periodo"
+                }
+              },
+              "queryRef": "dim_dates.Periodo",
+              "nativeQueryRef": "Periodo",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_measures"
+                    }
+                  },
+                  "Property": "Leads"
+                }
+              },
+              "queryRef": "_measures.Leads",
+              "nativeQueryRef": "Leads"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_measures"
+                    }
+                  },
+                  "Property": "Listings"
+                }
+              },
+              "queryRef": "_measures.Listings",
+              "nativeQueryRef": "Listings"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_measures"
+                    }
+                  },
+                  "Property": "Ratio Leads/Listings"
+                }
+              },
+              "queryRef": "_measures.Ratio Leads/Listings",
+              "nativeQueryRef": "Ratio",
+              "displayName": "Ratio"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_measures"
+                    }
+                  },
+                  "Property": "Concretadas"
+                }
+              },
+              "queryRef": "_measures.Concretadas",
+              "nativeQueryRef": "Concretadas"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dim_dates"
+                  }
+                },
+                "Property": "Periodo"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "37.56407906242982D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "dim_dates"
+                          }
+                        },
+                        "Property": "Día Semana"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Vie'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "49.95933242936469D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.Ratio Leads/Listings"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "86.95500045089729D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.Concretadas"
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

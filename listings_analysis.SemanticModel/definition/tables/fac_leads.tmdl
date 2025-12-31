@@ -12,12 +12,14 @@ table fac_leads
 
 	column lead_date
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		lineageTag: a2290e03-ebe1-4cef-aee7-097b351fa2ac
 		summarizeBy: none
 		sourceColumn: lead_date
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column listing_id
 		dataType: int64
@@ -26,7 +28,7 @@ table fac_leads
 		summarizeBy: none
 		sourceColumn: listing_id
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column source
 		dataType: string
@@ -68,7 +70,7 @@ table fac_leads
 				    Source = Excel.Workbook(File.Contents("C:\Users\luisa\OneDrive\Escritorio\real_state_analysis\real_state_source.xlsx"), null, true),
 				    fac_leads_Sheet = Source{[Item="fac_leads",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(fac_leads_Sheet, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"lead_id", Int64.Type}, {"lead_date", type datetime}, {"listing_id", Int64.Type}, {"source", type text}, {"source_type", type text}, {"assigned_to", type text}, {"customer_id", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"lead_id", Int64.Type}, {"lead_date", type date}, {"listing_id", Int64.Type}, {"source", type text}, {"source_type", type text}, {"assigned_to", type text}, {"customer_id", Int64.Type}})
 				in
 				    #"Changed Type"
 

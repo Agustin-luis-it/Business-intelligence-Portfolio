@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "9c39d7765fd203d80955",
+  "displayName": "Tooltip bar chart",
+  "displayOption": "ActualSize",
+  "height": 210,
+  "width": 170,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8ec20d7da687acf82630",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_dates"
+              }
+            },
+            "Property": "Periodo"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "244b81b2020002f4295d",
+    "type": "Tooltip",
+    "parameters": [
+      {
+        "name": "8675b0d5a9eb1e82ae5d",
+        "boundFilter": "8ec20d7da687acf82630",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_dates"
+              }
+            },
+            "Property": "Periodo"
+          }
+        }
+      }
+    ]
+  },
+  "type": "Tooltip"
+}

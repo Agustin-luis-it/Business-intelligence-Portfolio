@@ -3,10 +3,8 @@ table _measures
 
 	measure Listings = ```
 			
-			CALCULATE(
-			    DISTINCTCOUNT(dim_listings[listing_id]),
-			    dim_listings[listing_status] = "Activo"
-			)
+			DISTINCTCOUNT(dim_listings[listing_id])
+			
 			
 			```
 		formatString: 0
@@ -27,14 +25,9 @@ table _measures
 	measure Leads = ```
 			
 			VAR _leads = COUNTROWS(fac_leads)
-			VAR _result =
-			        CALCULATE(
-			            _leads,
-			            USERELATIONSHIP(dim_dates[Fecha], fac_leads[lead_date])
-			        )
 			
 			RETURN
-			_result
+			_leads
 			
 			```
 		formatString: 0
@@ -50,7 +43,7 @@ table _measures
 			
 			CALCULATE(
 			    COUNTROWS(dim_listings),
-			    dim_listings[listing_status] = "Vendido"
+			    dim_listings[deactivation_reason] = "Concretada"
 			)
 		formatString: 0
 		displayFolder: KPIs

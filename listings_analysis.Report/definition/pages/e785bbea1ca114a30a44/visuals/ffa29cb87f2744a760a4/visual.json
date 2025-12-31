@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "ffa29cb87f2744a760a4",
+  "position": {
+    "x": 10.3425015781405,
+    "y": 0,
+    "z": 0,
+    "height": 622.0275949138786,
+    "width": 591.00009017945717,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_dates"
+                    }
+                  },
+                  "Property": "Periodo"
+                }
+              },
+              "queryRef": "dim_dates.Periodo",
+              "nativeQueryRef": "Periodo",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_measures"
+                    }
+                  },
+                  "Property": "Leads"
+                }
+              },
+              "queryRef": "_measures.Leads",
+              "nativeQueryRef": "Leads"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dim_dates"
+                  }
+                },
+                "Property": "Periodo"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

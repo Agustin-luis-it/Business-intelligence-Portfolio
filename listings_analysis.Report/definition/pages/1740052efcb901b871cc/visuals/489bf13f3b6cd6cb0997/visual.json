@@ -804,6 +804,20 @@
           "selector": {
             "id": "default"
           }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures._operaciones_concretadas"
+          }
         }
       ],
       "accentBar": [

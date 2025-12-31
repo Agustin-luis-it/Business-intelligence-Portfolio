@@ -29,7 +29,7 @@ table dim_listings
 
 	column publication_date
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: 28fe879a-d468-4534-9b59-b4044bfac294
 		summarizeBy: none
 		sourceColumn: publication_date
@@ -55,11 +55,19 @@ table dim_listings
 
 		annotation SummarizationSetBy = Automatic
 
-	column listing_status
+	column deactivation_date
 		dataType: string
-		lineageTag: 24dc4bff-cfea-415b-91fa-7c4c00efb083
+		lineageTag: 846c2ea9-84cf-4cb0-83b3-c23835a8c266
 		summarizeBy: none
-		sourceColumn: listing_status
+		sourceColumn: deactivation_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column deactivation_reason
+		dataType: string
+		lineageTag: 47108dfd-6400-47c6-8d55-700ee9a5fe2b
+		summarizeBy: none
+		sourceColumn: deactivation_reason
 
 		annotation SummarizationSetBy = Automatic
 
@@ -70,7 +78,7 @@ table dim_listings
 				    Source = Excel.Workbook(File.Contents("C:\Users\luisa\OneDrive\Escritorio\real_state_analysis\real_state_source.xlsx"), null, true),
 				    fac_listings_Sheet = Source{[Item="dim_listings",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(fac_listings_Sheet, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"listing_id", Int64.Type}, {"property_id", Int64.Type}, {"operation_type", type text}, {"publication_date", type date}, {"price", Int64.Type}, {"currency", type text}, {"listing_status", type text}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"listing_id", Int64.Type}, {"property_id", Int64.Type}, {"operation_type", type text}, {"publication_date", type date}, {"price", Int64.Type}, {"currency", type text}, {"deactivation_reason", type text}}),
 				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"operation_type", "Tipo de operación"}})
 				in
 				    #"Renamed Columns"
