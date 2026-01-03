@@ -4,10 +4,10 @@
   "position": {
     "x": 430.39151841190443,
     "y": 45.100907618013935,
-    "z": 8,
+    "z": 7000,
     "height": 79.8930363519104,
     "width": 210.04136976389347,
-    "tabOrder": 7
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dim_listings"
+                      "Entity": "dim_operation_type"
                     }
                   },
                   "Property": "Tipo de operación"
                 }
               },
-              "queryRef": "dim_listings.Tipo de operación",
-              "nativeQueryRef": "Tipo de operación",
+              "queryRef": "dim_operation_type.operation_type",
+              "nativeQueryRef": "operation_type",
               "active": true
             }
           ]

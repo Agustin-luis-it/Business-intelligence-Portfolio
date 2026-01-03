@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 47.403034456563141,
+        "x": 50.563236753667354,
         "y": 0
       },
       "nodes": [
         {
           "location": {
-            "x": 98.529772141051126,
-            "y": 2.8422478313703969
+            "x": 0,
+            "y": 9.1626524255788162
           },
           "nodeIndex": "dim_locations",
           "nodeLineageTag": "e4eff01c-6592-4ae7-af9e-1ef5e8331929",
@@ -19,12 +19,12 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 4
+          "zIndex": 5
         },
         {
           "location": {
-            "x": 512.75299097957293,
-            "y": 0
+            "x": 315.24034741055982,
+            "y": 9.4806068913126271
           },
           "nodeIndex": "dim_properties",
           "nodeLineageTag": "41f47891-f006-46c6-b40a-94ac0c563349",
@@ -32,12 +32,12 @@
             "height": 248,
             "width": 234
           },
-          "zIndex": 5
+          "zIndex": 6
         },
         {
           "location": {
-            "x": 849.439493263783,
-            "y": 0
+            "x": 839.95888637247037,
+            "y": 7.9005057427605188
           },
           "nodeIndex": "dim_dates",
           "nodeLineageTag": "ee229faf-8848-46e0-b3e0-947b742333b5",
@@ -45,7 +45,7 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 6
+          "zIndex": 7
         },
         {
           "location": {
@@ -58,14 +58,53 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 3
         },
         {
           "location": {
-            "x": 538.25125490260029,
-            "y": 426.30935564333447
+            "x": 1150.8957976550587,
+            "y": 4.7403034456563145
           },
-          "nodeIndex": "dim_listings",
+          "nodeIndex": "dim_customers",
+          "nodeLineageTag": "5cf43a08-853a-4479-8796-84fe685f9a91",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1002.2578281949288,
+            "y": 598.34990310380522
+          },
+          "nodeIndex": "fac_leads",
+          "nodeLineageTag": "919a3036-f149-422d-8ede-938c9e232f54",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 576.6271164633032,
+            "y": 8.0400112816120028
+          },
+          "nodeIndex": "dim_operation_type",
+          "nodeLineageTag": "b075ec9e-a88b-4802-8c98-e7d5a6ff3111",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 560.37267098232985,
+            "y": 600.120481984066
+          },
+          "nodeIndex": "fac_listings",
           "nodeLineageTag": "8fc82974-adc4-46ef-90dd-4c5b33730c35",
           "size": {
             "height": 248,
@@ -75,29 +114,15 @@
         },
         {
           "location": {
-            "x": 1214.0998435971428,
-            "y": 0.13237699097444988
+            "x": 1488.2737885938689,
+            "y": 144.2271928288115
           },
-          "nodeIndex": "dim_customers",
-          "nodeLineageTag": "5cf43a08-853a-4479-8796-84fe685f9a91",
+          "nodeIndex": "_measure_selector",
           "size": {
-            "height": 272,
+            "height": 152,
             "width": 234
           },
-          "zIndex": 3
-        },
-        {
-          "location": {
-            "x": 905.87165813325055,
-            "y": 422.95867561452161
-          },
-          "nodeIndex": "fac_leads",
-          "nodeLineageTag": "919a3036-f149-422d-8ede-938c9e232f54",
-          "size": {
-            "height": 248,
-            "width": 234
-          },
-          "zIndex": 7
+          "zIndex": 0
         }
       ],
       "name": "All tables",

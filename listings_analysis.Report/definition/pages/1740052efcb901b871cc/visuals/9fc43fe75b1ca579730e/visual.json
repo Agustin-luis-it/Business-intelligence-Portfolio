@@ -4,10 +4,10 @@
   "position": {
     "x": 221.62503381729641,
     "y": 174.34502660293984,
-    "z": 19002,
+    "z": 750,
     "height": 527.46758048516551,
     "width": 679.65010370637572,
-    "tabOrder": 7023
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "lineClusteredColumnComboChart",
@@ -321,9 +321,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.2
+                    "Literal": {
+                      "Value": "'#CCCCCC'"
                     }
                   }
                 }
@@ -449,9 +448,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.1
+                    "Literal": {
+                      "Value": "'#E6E6E6'"
                     }
                   }
                 }
@@ -516,9 +514,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.2
+                    "Literal": {
+                      "Value": "'#CCCCCC'"
                     }
                   }
                 }
@@ -559,7 +556,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Evolución de Listings, leads y ratio'"
+                  "Value": "'Evolución de Listings, Leads y Ratio'"
                 }
               }
             }
@@ -568,51 +565,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e0f77657159151253e82",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_dates"
-              }
-            },
-            "Property": "Periodo"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "3deba3e27b74a2a6729b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_measures"
-              }
-            },
-            "Property": "Leads"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "80b7e8230951d39b93fd",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_measures"
-              }
-            },
-            "Property": "Listings"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -71,13 +71,13 @@ table dim_dates
 				VAR _min_date =
 				    MIN (
 				        CALCULATE ( MIN ( fac_leads[lead_date] ), ALL ( fac_leads ) ),
-				        CALCULATE ( MIN ( dim_listings[publication_date] ), ALL ( dim_listings ) )
+				        CALCULATE ( MIN ( fac_listings[publication_date] ), ALL ( fac_listings ) )
 				    )
 				
 				VAR _max_date =
 				    MAX (
 				        CALCULATE ( MAX ( fac_leads[lead_date] ), ALL ( fac_leads ) ),
-				        CALCULATE ( MAX ( dim_listings[publication_date] ), ALL ( dim_listings ) )
+				        CALCULATE ( MAX ( fac_listings[publication_date] ), ALL ( fac_listings ) )
 				    )
 				
 				RETURN

@@ -1,0 +1,37 @@
+table dim_operation_type
+	lineageTag: b075ec9e-a88b-4802-8c98-e7d5a6ff3111
+
+	column operation_type_id
+		formatString: 0
+		lineageTag: 127b4aa0-f586-4aa7-a908-145301e0a854
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [operation_type_id]
+
+		annotation SummarizationSetBy = User
+
+	column 'Tipo de operación'
+		lineageTag: 174c0370-52e6-40c4-b001-36830dd2a136
+		summarizeBy: none
+		sourceColumn: [operation_type]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_operation_type = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE (
+				    "operation_type_id", INTEGER,
+				    "operation_type", STRING,
+				    {
+				        { 1, "Venta" },
+				        { 2, "Alquiler" },
+				        { 3, "Alquiler Temporario" }
+				    }
+				)
+				
+				```
+
+	annotation PBI_Id = 7bd19219b8514b5e8f99b66530bc9997
+

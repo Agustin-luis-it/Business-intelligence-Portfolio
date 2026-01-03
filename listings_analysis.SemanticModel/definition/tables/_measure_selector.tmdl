@@ -1,0 +1,50 @@
+table _measure_selector
+	lineageTag: a959eb79-0a04-4da0-99a8-5e45bdb1edf7
+
+	column Parameter
+		lineageTag: 9edd786a-3ce3-4fee-b29f-960e85d78aae
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: 1e5aa48e-28c6-4689-97e9-c7824a1b7149
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: b42850e6-3679-426d-a591-9992c125af27
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = User
+
+	partition _measure_selector = calculated
+		mode: import
+		source =
+				{
+				    ("Listings", NAMEOF('_measures'[Listings]), 0),
+				    ("Leads", NAMEOF('_measures'[Leads]), 1),
+				    ("Ratio Leads/Listings", NAMEOF('_measures'[Ratio Leads/Listings]), 2),
+				    ("Concretadas", NAMEOF('_measures'[Concretadas]), 3)
+				}
+
+	annotation PBI_Id = c76d4ed6659948d09d64bf145193fad9
+

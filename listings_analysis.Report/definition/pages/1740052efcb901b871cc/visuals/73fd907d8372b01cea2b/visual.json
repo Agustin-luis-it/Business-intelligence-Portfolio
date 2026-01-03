@@ -7,7 +7,7 @@
     "z": 5000,
     "height": 65.2489048187973,
     "width": 190.91346224759209,
-    "tabOrder": 5000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dim_listings"
+                      "Entity": "dim_operation_type"
                     }
                   },
                   "Property": "Tipo de operación"
                 }
               },
-              "queryRef": "dim_listings.Tipo de operación",
+              "queryRef": "dim_operation_type.operation_type",
               "nativeQueryRef": "Tipo de operación",
               "active": true
             }
@@ -101,6 +101,11 @@
               }
             }
           }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
         }
       ]
     },

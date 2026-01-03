@@ -8,17 +8,19 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["dim_locations","dim_properties","dim_listings","_measures","dim_customers","fac_leads"]
+annotation PBI_QueryOrder = ["dim_locations","dim_properties","fac_listings","_measures","dim_customers","fac_leads"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table dim_locations
 ref table dim_properties
-ref table dim_listings
+ref table fac_listings
 ref table dim_dates
 ref table _measures
 ref table dim_customers
 ref table fac_leads
+ref table _measure_selector
+ref table dim_operation_type
 
 ref cultureInfo en-US
 

@@ -3,9 +3,15 @@ table _measures
 
 	measure Listings = ```
 			
-			DISTINCTCOUNT(dim_listings[listing_id])
+			VAR _max_date = MAX (dim_dates[Fecha])
+			VAR _publicated_current_month = 
+			    CALCULATE (
+			        DISTINCTCOUNT ( fac_listings[listing_id] ),
+			        fac_listings[publication_date] <= _max_date
+			    )
 			
-			
+			RETURN
+			_publicated_current_month
 			```
 		formatString: 0
 		displayFolder: KPIs
@@ -14,8 +20,8 @@ table _measures
 	measure 'Precio de venta promedio' =
 			
 			CALCULATE(
-			    AVERAGE(dim_listings[price]),
-			    dim_listings[Tipo de operación] = "Venta"
+			    AVERAGE(fac_listings[price]),
+			    fac_listings[deactivation_reason] = "Closed"
 			)
 		displayFolder: KPIs
 		lineageTag: 32ae598e-7ea0-4fab-8fa3-7d1170038b96
@@ -42,10 +48,10 @@ table _measures
 	measure Concretadas =
 			
 			CALCULATE(
-			    COUNTROWS(dim_listings),
-			    dim_listings[deactivation_reason] = "Concretada"
+			    COUNTROWS(fac_listings),
+			    fac_listings[deactivation_reason] = "Closed",
+			    USERELATIONSHIP(fac_listings[deactivation_date], dim_dates[Fecha])
 			)
-		formatString: 0
 		displayFolder: KPIs
 		lineageTag: e7bf869f-67ee-42f3-97d4-3d45e5e031d6
 
@@ -62,6 +68,22 @@ table _measures
 		lineageTag: 43775d8b-b70c-49bb-bc25-3481d3988b2f
 
 		changedProperty = IsHidden
+
+	measure _selected_measure_color =
+			
+			VAR _selected =
+			    MAX ( _measure_selector[Parameter] )
+			RETURN
+			SWITCH (
+			    _selected,
+			    "Listings", "#D4AF37",
+			    "Leads", "#0C4DA2",
+			    "Ratio Leads/Listings", "#D57A42",
+			    "Concretadas", "#6FCF97",
+			    "#000000"
+			)
+		displayFolder: _various
+		lineageTag: 18618eaf-86de-4536-86c3-8967248a022c
 
 	column medidas
 		dataType: string

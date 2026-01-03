@@ -31,8 +31,6 @@
       {
         "name": "8675b0d5a9eb1e82ae5d",
         "boundFilter": "8ec20d7da687acf82630",
-        "asAggregation": false,
-        "qnaSingleSelectRequired": false,
         "fieldExpr": {
           "Column": {
             "Expression": {
@@ -46,5 +44,6 @@
       }
     ]
   },
+  "visibility": "HiddenInViewMode",
   "type": "Tooltip"
 }

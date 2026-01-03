@@ -3,23 +3,35 @@ relationship AutoDetected_10b6a05b-33b9-41cf-83fc-640b0425431b
 	toColumn: dim_locations.location_id
 
 relationship AutoDetected_14ccc59a-c552-48a8-9438-0af3801fd8fe
-	fromColumn: dim_listings.property_id
+	fromColumn: fac_listings.property_id
 	toColumn: dim_properties.property_id
-
-relationship AutoDetected_a42f7321-516c-4e4e-b342-cd3758d15393
-	isActive: false
-	fromColumn: fac_leads.listing_id
-	toColumn: dim_listings.listing_id
 
 relationship AutoDetected_6cbf9671-30ef-48d7-880c-637d4f3cdeb7
 	fromColumn: fac_leads.customer_id
 	toColumn: dim_customers.customer_id
 
 relationship f3d8e043-a7fb-7989-1c3c-0376fe28baaf
-	fromColumn: dim_listings.publication_date
+	fromColumn: fac_listings.publication_date
 	toColumn: dim_dates.Fecha
 
 relationship 3412a8a9-f058-0d1d-2ca6-6ea5aef44a9c
 	fromColumn: fac_leads.lead_date
+	toColumn: dim_dates.Fecha
+
+relationship 98eab8f5-458a-da5b-e98e-6b88067438ea
+	fromColumn: fac_listings.operation_type_id
+	toColumn: dim_operation_type.operation_type_id
+
+relationship a6f380d3-4fb8-7252-8623-1b43a9e3de41
+	fromColumn: fac_leads.operation_type_id
+	toColumn: dim_operation_type.operation_type_id
+
+relationship AutoDetected_5264fb45-1c11-4836-8f14-7fbc1dad8e3c
+	fromColumn: fac_leads.property_id
+	toColumn: dim_properties.property_id
+
+relationship 521ecbb0-f3eb-9f89-8c87-9780de56aaf0
+	isActive: false
+	fromColumn: fac_listings.deactivation_date
 	toColumn: dim_dates.Fecha
 
