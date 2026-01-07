@@ -1,0 +1,129 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "58d3c6fba34bd7e984d0",
+  "position": {
+    "x": 360.07728955558508,
+    "y": 230.78779297019042,
+    "z": 0,
+    "height": 451.90908152278126,
+    "width": 919.5262327241619,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fac_listings"
+                    }
+                  },
+                  "Property": "publication_date"
+                }
+              },
+              "queryRef": "fac_listings.publication_date",
+              "nativeQueryRef": "publication_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_properties"
+                    }
+                  },
+                  "Property": "direccion"
+                }
+              },
+              "queryRef": "dim_properties.direccion",
+              "nativeQueryRef": "direccion"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fac_listings"
+                    }
+                  },
+                  "Property": "price"
+                }
+              },
+              "queryRef": "CountNonNull(fac_listings.price)",
+              "nativeQueryRef": "price1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fac_listings"
+                    }
+                  },
+                  "Property": "deactivation_reason"
+                }
+              },
+              "queryRef": "fac_listings.deactivation_reason",
+              "nativeQueryRef": "deactivation_reason"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fac_listings"
+                  }
+                },
+                "Property": "publication_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "296.367906140668D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dim_properties.direccion"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "124.96002349146823D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fac_listings.publication_date"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

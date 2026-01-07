@@ -85,6 +85,78 @@ table _measures
 		displayFolder: _various
 		lineageTag: 18618eaf-86de-4536-86c3-8967248a022c
 
+	measure 'Edad promedio de cliente' = AVERAGE(dim_customers[age])
+		formatString: 0
+		displayFolder: KPIs
+		lineageTag: 18875b59-7019-4953-924e-13cf62ed1a58
+
+	measure 'Ocupación más común' =
+			
+			VAR _table =
+			    ADDCOLUMNS(
+			        FILTER(
+			            VALUES ( dim_customers[occupation] ),
+			            NOT ISBLANK ( dim_customers[occupation] )
+			        ),
+			        "__Leads", [Leads]
+			    )
+			RETURN
+			    CONCATENATEX (
+			        TOPN ( 1, _table, [__Leads], DESC ),
+			        dim_customers[occupation],
+			        ", "
+			    )
+		displayFolder: KPIs
+		lineageTag: 5773034b-c1b7-4a34-a66a-afda25d36cc6
+
+	measure 'Leads MoM' =
+			
+			VAR _previous =
+			    CALCULATE(
+			        [Leads],
+			        PREVIOUSMONTH(dim_dates[Fecha])
+			    )
+			VAR _current = [Leads]
+			VAR _result = (_current - _previous) / _previous
+			
+			RETURN
+			IF(_previous <> 0, _result)
+		formatString: 0\ %;-0\ %;0\ %
+		displayFolder: KPIs
+		lineageTag: b05a2883-d5c4-4f8e-b874-3eeb95d78e9f
+
+	measure 'Listings MoM' =
+			
+			VAR _previous =
+			    CALCULATE(
+			        [Listings],
+			        PREVIOUSMONTH(dim_dates[Fecha])
+			    )
+			VAR _current = [Listings]
+			VAR _result = (_current - _previous) / _previous
+			
+			RETURN
+			IF(_previous <> 0, _result)
+		formatString: 0\ %;-0\ %;0\ %
+		displayFolder: KPIs
+		lineageTag: 5b561367-524f-4a7c-9062-e3f70d5fedef
+
+	measure 'Ratio MoM' =
+			
+			VAR _previous =
+			    CALCULATE(
+			        [Ratio Leads/Listings],
+			        PREVIOUSMONTH(dim_dates[Fecha])
+			    )
+			VAR _current = [Ratio Leads/Listings]
+			VAR _result = (_current - _previous) / _previous
+			
+			RETURN
+			IF(_previous <> 0, _result)
+		formatString: 0\ %;-0\ %;0\ %
+		displayFolder: KPIs
+		lineageTag: 7b83f9ca-be63-429b-a8b3-cfd6c08365a0
+
 	column medidas
 		dataType: string
 		lineageTag: 5055c3b3-546b-4d2a-95b1-69c61ada5ae8

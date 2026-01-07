@@ -4,7 +4,7 @@
   "position": {
     "x": 5.2603021206235052,
     "y": 280.11108792320164,
-    "z": 2001,
+    "z": 5000,
     "height": 64,
     "width": 191,
     "tabOrder": 32
@@ -137,7 +137,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''_measures''[Listings]'"
+                                "Value": "'''_measures''[Leads]'"
                               }
                             }
                           ]
@@ -165,7 +165,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''_measures''[Listings]'"
+                                      "Value": "'''_measures''[Leads]'"
                                     }
                                   }
                                 ]
@@ -189,13 +189,26 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Listings"
+                            "0": "Leads"
                           }
                         ]
                       }
                     }
                   }
                 ]
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
               }
             }
           }

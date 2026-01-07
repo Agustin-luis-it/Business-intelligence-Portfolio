@@ -1,1 +1,18 @@
+DEFINE
+MEASURE '_measures'[Leads MoM] = 
+VAR _previous =
+    CALCULATE(
+        [Leads],
+        PREVIOUSMONTH(dim_dates[Fecha])
+    )
+VAR _current = [Leads]
+RETURN
+(_current - _previous) / _previous
 
+EVALUATE
+SUMMARIZECOLUMNS(
+    dim_dates[Periodo],
+    "Leads", [Leads],
+    "Mom", [Dummy]
+)
+ORDER BY dim_dates[Periodo] DESC

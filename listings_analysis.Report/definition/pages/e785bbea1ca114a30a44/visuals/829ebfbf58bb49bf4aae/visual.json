@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "829ebfbf58bb49bf4aae",
   "position": {
-    "x": 222.44800360929395,
-    "y": 79.000225580870747,
-    "z": 500,
-    "height": 299.36927588540493,
-    "width": 520.777802842319,
+    "x": 687.53012670177145,
+    "y": 103.91492248919569,
+    "z": 2000,
+    "height": 299.66163694558759,
+    "width": 569.1154475861764,
     "tabOrder": 30
   },
   "visual": {
@@ -42,12 +42,12 @@
                       "Entity": "_measures"
                     }
                   },
-                  "Property": "Listings"
+                  "Property": "Leads"
                 }
               },
-              "queryRef": "_measures.Listings",
-              "nativeQueryRef": "Listings",
-              "displayName": "Listings"
+              "queryRef": "_measures.Leads",
+              "nativeQueryRef": "Leads",
+              "displayName": "Leads"
             }
           ],
           "fieldParameters": [
@@ -78,7 +78,7 @@
                     "Entity": "_measures"
                   }
                 },
-                "Property": "Listings"
+                "Property": "Leads"
               }
             },
             "direction": "Descending"

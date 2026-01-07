@@ -94,6 +94,11 @@
           "name": "right-arrow2172266136537655.png",
           "path": "right-arrow2172266136537655.png",
           "type": "Image"
+        },
+        {
+          "name": "CABA_barrrios5660454039097239.json",
+          "path": "CABA_barrrios5660454039097239.json",
+          "type": "ShapeMap"
         }
       ]
     }

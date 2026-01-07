@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "c4230d3552d5f15af1cc",
   "position": {
-    "x": 917.109606619762,
-    "y": 173.99707951679278,
+    "x": 877.432202647033,
+    "y": 173.76316942764484,
     "z": 500,
-    "height": 528.03280381137813,
-    "width": 346.78584598138559,
+    "height": 528.46980454027528,
+    "width": 386.29993864492945,
     "tabOrder": 5000
   },
   "visual": {
@@ -56,11 +56,41 @@
                       "Entity": "_measures"
                     }
                   },
+                  "Property": "Listings MoM"
+                }
+              },
+              "queryRef": "_measures.Listings MoM",
+              "nativeQueryRef": "LMoM",
+              "displayName": "LMoM"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_measures"
+                    }
+                  },
                   "Property": "Leads"
                 }
               },
               "queryRef": "_measures.Leads",
               "nativeQueryRef": "Leads"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_measures"
+                    }
+                  },
+                  "Property": "Leads MoM"
+                }
+              },
+              "queryRef": "_measures.Leads MoM",
+              "nativeQueryRef": "LIMoM",
+              "displayName": "LIMoM"
             },
             {
               "field": {
@@ -85,11 +115,12 @@
                       "Entity": "_measures"
                     }
                   },
-                  "Property": "Concretadas"
+                  "Property": "Ratio MoM"
                 }
               },
-              "queryRef": "_measures.Concretadas",
-              "nativeQueryRef": "Concretadas"
+              "queryRef": "_measures.Ratio MoM",
+              "nativeQueryRef": "RMoM",
+              "displayName": "RMoM"
             }
           ]
         }
@@ -156,7 +187,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "49.95933242936469D"
+                  "Value": "42.754134039275954D"
                 }
               }
             }
@@ -170,13 +201,69 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "86.95500045089729D"
+                  "Value": "55.50652785008648D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "_measures.Concretadas"
+            "metadata": "_measures.Leads MoM"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "45.01442108429097D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.Leads"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "55.010871639700156D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.Listings"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "47.086463325686935D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.Listings MoM"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "53.99261045451299D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.Ratio MoM"
           }
         }
       ],
@@ -202,70 +289,237 @@
       ],
       "values": [
         {
+          "properties": {}
+        },
+        {
           "properties": {
-            "backColorSecondary": {
+            "fontColor": {
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
+                    "FillRule": {
+                      "Input": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_measures"
+                            }
+                          },
+                          "Property": "Listings MoM"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient2": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#FF2525'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "0.1D"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#009113'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "0D"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }
               }
             }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.Listings MoM"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.Listings"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_measures"
+                            }
+                          },
+                          "Property": "Leads MoM"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient2": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#FF2525'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "-0.1D"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#009113'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "1D"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.Leads MoM"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_measures"
+                            }
+                          },
+                          "Property": "Ratio MoM"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient2": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#FF2525'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "-0.1D"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#009113'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "0D"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.Ratio MoM"
           }
         }
       ],
       "columnHeaders": [
         {
-          "properties": {
-            "outlineWeight": {
-              "expr": {
-                "Literal": {
-                  "Value": "2D"
-                }
-              }
-            },
-            "outlineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "rowHeaders": [
         {
-          "properties": {
-            "outlineWeight": {
-              "expr": {
-                "Literal": {
-                  "Value": "2D"
-                }
-              }
-            },
-            "outlineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          }
+          "properties": {}
         }
       ]
     },
@@ -381,6 +635,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Minimal'"
                 }
               }
             }
